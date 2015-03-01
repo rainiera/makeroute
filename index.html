@@ -8,14 +8,10 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Make Route: Find What's Good on the Way</title>
+    <title>MakeRoute: Find What's Good on the Way</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"> 
-
-    <!-- Custom styles for this template -->
-    <link href="css/bootstrapTempSuperHero.css" rel="stylesheet"> 
-      
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -45,13 +41,33 @@
                     <!--Put some sort of divider here?-->
                     <input type="text" name="LocationB" class="form-control" placeholder="Location B" id="locationb">
                 </div>
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mode of Travel<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu" id="dropDownChoice">
-            <li><a href="#" >Driving</a></li>
-            <li><a href="#">Walking</a></li>
-            <li><a href="#">Biking</a></li>
-            <li><a href="#">Transit</a></li>
-          </ul>
+<!--           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="mode" onchange="calcRoute();">Mode of Travel<span class="caret"></span></a>-->
+<!--          <ul class="dropdown-menu" role="menu" id="dropDownChoice">-->
+<!--            <li><option value="DRIVING">Driving</option></li>-->
+<!--            <li><a href="#">Walking</a></li>-->
+<!--            <li><a href="#">Biking</a></li>-->
+<!--            <li><a href="#">Transit</a></li>-->
+<!--          </ul>-->
+<!--
+                <strong>Mode of Travel: </strong>
+<select id="mode" onchange="calcRoute();">
+  <option value="DRIVING">Driving</option>
+  <option value="WALKING">Walking</option>
+  <option value="BICYCLING">Bicycling</option>
+  <option value="TRANSIT">Transit</option>
+</select>
+</div>
+-->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mode of Travel<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu" id="dropDownChoice">
+                    <li><option value="DRIVING">Driving</option></li>
+                    <li><option value="WALKING">Walking</option></li>
+                    <li><option value="BICYCLING">Bicycling</option></li>
+                    <li><option value="TRANSIT">Transit</option></li>
+                
+                </ul>
+                
+<!--
                 <script>
                     function chooseTravel() {
                         var travel = document.getElementById(dropDownChoice);
@@ -70,25 +86,18 @@
                             //Do nothing
                             //document.getElementById(travel).innerHTML = T
                         }
-                </script>
+                </script> -->
                 <button type="submit" class="btn btn-default">Search</button>
                 <!-- on click="document.getElementById("demo").innerHTML = "Change text"> a tag the id="attribute"> -->
             </form>
         </ul>
     </div>
   </div>
-</nav>
-        <marquee>lol</marquee>
-    <!-- <div class="jumbotron"> -->
-      <!--<div class="container"> -->
-        <iframe src="/html/sampleMap.html" style="height: 90%; width: 100%" scrolling="no"></iframe>
-          
-          <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
-      <!-- </div> -->
-    <!-- </div> -->
-
+</nav>   
+        <iframe src="/html/sampleMap.html" style="height: 650px; width: 100%" scrolling="no" ></iframe>
     <div class="container">
       <!-- Example row of columns -->
+    <!-- Load the data here -->
       <div class="row">
         <div class="col-md-4">
           <h2>Heading</h2>
@@ -110,9 +119,9 @@
       <hr>
 
       <footer>
-          <p>Make Route is a travel assistant aimed to give you the best roadtrips, made by the best HackDFW attendees ever.<br>
+          <p>MakeRoute is a travel assistant aimed to give you the best roadtrips, made by the best HackDFW attendees ever.<br>
               Want to see our code? Check out our Github <a href="http://github.com/rainiera/makeroute/">here</a>.</p>
-        <p>&copy; Rainier Abaobao, Nick Gunther, Addy Kim, Kieran Vanderslice 2015</p>
+        <p>&copy; Rainier Ababao, Nick Ginther, Addy Kim, Kieran Vanderslice 2015</p>
       </footer>
     </div> <!-- /container -->
 
