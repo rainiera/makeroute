@@ -1,5 +1,5 @@
 @import url("//fonts.googleapis.com/css?family=Lato:300,400,700");
-@import url("//fonts.googleapis.com/css?family=Lobster);
+@import url("//fonts.googleapis.com/css?family=Lobster");
 /*!
  * bootswatch v3.3.2
  * Homepage: http://bootswatch.com
@@ -4156,6 +4156,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-width: 1px 0 0;
 }
 .navbar-brand {
+  font-family: "Lobster";
   float: left;
   padding: 9.5px 15px;
   font-size: 19px;
@@ -6785,4 +6786,3 @@ a.list-group-item-danger.active:focus {
 .popover-title {
   border: none;
 }
-< 1 min to Spreed
