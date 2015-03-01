@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6f13241716e05fb929faff52ffb6033cd5e13120
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,15 +33,30 @@
     
         GeoMarker = new GeolocationMarker();
         GeoMarker.setCircleOptions({fillColor: '#808080'});
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6f13241716e05fb929faff52ffb6033cd5e13120
         google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
           map.setCenter(this.getPosition());
           map.fitBounds(this.getBounds());
         });
+<<<<<<< HEAD
         google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
           alert('There was an error obtaining your position. Message: ' + e.message);
         });
         GeoMarker.setMap(map);
       }
+=======
+
+        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
+          alert('There was an error obtaining your position. Message: ' + e.message);
+        });
+
+        GeoMarker.setMap(map);
+      }
+
+>>>>>>> 6f13241716e05fb929faff52ffb6033cd5e13120
       google.maps.event.addDomListener(window, 'load', initialize);
       
       if(!navigator.geolocation) {
@@ -48,4 +67,8 @@
   <body>
     <div id="map_canvas"></div>
   </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 6f13241716e05fb929faff52ffb6033cd5e13120
