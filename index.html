@@ -18,8 +18,9 @@
 
     <!-- Load the Google Maps Places API -->
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
-    <script src="/js/autocomplete.js"></script>
+    <script src="/js/Autocomplete.js"></script>
     <script src="/js/form.js"></script>
+    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -37,8 +38,28 @@
         </div>
     </nav>
     <div id="mapcontainer">
+        <iframe src="/html/sampleMap.html" style="height: 600px; width: 100%" scrolling="no"></iframe>
     </div>
     <div class="form-group">
+        <script>
+            var autocomplete;
+            function initialize() {
+                autocompleteA = new google.maps.places.Autocomplete(
+                    /** @type {HTMLInputElement} */(document.getElementById('afield')),
+                    { types: ['geocode'] });
+                google.maps.event.addListener(autocompleteA, 'place_changed', function() {
+                });
+
+                autocompleteB = new google.maps.places.Autocomplete(
+                    /** @type {HTMLInputElement} */(document.getElementById('bfield')),
+                    { types: ['geocode'] });
+                google.maps.event.addListener(autocompleteB, 'place_changed', function() {
+                });
+
+            }
+
+        
+        </script>
         <form class="navbar-form navbar-center" id="myForm" role="search">
             <label for="locationa" class="label">From</label>
             <input type="text" name="afield" class="form-control" placeholder="Location A" id="afield">
@@ -46,7 +67,7 @@
             <label for="locationa" class="label">To</label>
             <input type="text" name="bfield" class="form-control" placeholder="Location B" id="bfield">
             <button type="submit" class="btn btn-default">Go!</button>
-
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
             <!-- on click="document.getElementById("demo").innerHTML = "Change text"> a tag the id="attribute"> -->
         </form>
     </div>
