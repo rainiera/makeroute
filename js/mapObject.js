@@ -6,6 +6,7 @@ var end = new google.maps.LatLng(32.7833333, -96.8);
 var changeLat = (end.lat() - start.lat())/10;
 var changeLong = (end.lng() - start.lng())/10;
 var markers = [];
+var placesResult;
 
 function initialize() {
   directionsDisplay = new google.maps.DirectionsRenderer();
@@ -26,7 +27,7 @@ function initialize() {
     var change = new google.maps.LatLng(start.lat() + (changeLat * i), start.lng() + (changeLong * i));
     request.location = change;
     service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
+    placesResult = service.nearbySearch(request, callback);
   }
   for (var j = 0; j < markers.length; j++){
     createMarker(markers[j]);
@@ -73,6 +74,7 @@ function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       markers.push(results[i]);
+        $(".review").append("<p>" placesResult[i]);
     }
   }
 }
