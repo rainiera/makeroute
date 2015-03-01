@@ -8,6 +8,7 @@
   <meta name="author" content="">
   <link rel="icon" href="../../favicon.ico">
 
+<<<<<<< HEAD
   <title>Make Route: Find What's Good on the Way</title>
 
   <!-- Bootstrap core CSS -->
@@ -18,6 +19,12 @@
   <!-- Load the Google Maps Places API -->
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
   <script src="/js/autocomplete.js"></script>
+=======
+    <title>MakeRoute: Find What's Good on the Way</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+>>>>>>> a839bda215c57bb2a0ebd44a24fc2fa864feb3d9
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -38,6 +45,7 @@
             <a class="navbar-brand" href="#">MakeRoute</a>
           </div>
 
+<<<<<<< HEAD
           <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-right">
               <li class="dropdown"></li>
@@ -51,6 +59,47 @@
               <script>
                 function chooseTravel() {
                   var travel = document.getElementById(dropDownChoice);
+=======
+    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+        <ul class="nav navbar-right">
+            <li class="dropdown"></li>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" name="LocationA" class="form-control" placeholder="Location A" id="locationa">
+                    <!--Put some sort of divider here?-->
+                    <input type="text" name="LocationB" class="form-control" placeholder="Location B" id="locationb">
+                </div>
+<!--           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="mode" onchange="calcRoute();">Mode of Travel<span class="caret"></span></a>-->
+<!--          <ul class="dropdown-menu" role="menu" id="dropDownChoice">-->
+<!--            <li><option value="DRIVING">Driving</option></li>-->
+<!--            <li><a href="#">Walking</a></li>-->
+<!--            <li><a href="#">Biking</a></li>-->
+<!--            <li><a href="#">Transit</a></li>-->
+<!--          </ul>-->
+<!--
+                <strong>Mode of Travel: </strong>
+<select id="mode" onchange="calcRoute();">
+  <option value="DRIVING">Driving</option>
+  <option value="WALKING">Walking</option>
+  <option value="BICYCLING">Bicycling</option>
+  <option value="TRANSIT">Transit</option>
+</select>
+</div>
+-->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mode of Travel<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu" id="dropDownChoice">
+                    <li><option value="DRIVING">Driving</option></li>
+                    <li><option value="WALKING">Walking</option></li>
+                    <li><option value="BICYCLING">Bicycling</option></li>
+                    <li><option value="TRANSIT">Transit</option></li>
+                
+                </ul>
+                
+<!--
+                <script>
+                    function chooseTravel() {
+                        var travel = document.getElementById(dropDownChoice);
+>>>>>>> a839bda215c57bb2a0ebd44a24fc2fa864feb3d9
                         //Get value of the input field with id=
                         if (travel == 1) {
                             //Driving
@@ -65,6 +114,7 @@
                             //Should not happen, not chosen
                             //Do nothing
                             //document.getElementById(travel).innerHTML = T
+<<<<<<< HEAD
                           }
                         </script>
                         <button type="submit" class="btn btn-default">Search</button>
@@ -91,15 +141,56 @@
                     <!--Put some sort of divider here?-->
                     <input type="text" name="LocationB" class="form-control" placeholder="Location B" id="locationb">
                   </div>
+=======
+                        }
+                </script> -->
+                <button type="submit" class="btn btn-default">Search</button>
+                <!-- on click="document.getElementById("demo").innerHTML = "Change text"> a tag the id="attribute"> -->
+            </form>
+        </ul>
+    </div>
+  </div>
+</nav>   
+        <iframe src="/html/sampleMap.html" style="height: 650px; width: 100%" scrolling="no" ></iframe>
+    <div class="container">
+      <!-- Example row of columns -->
+    <!-- Load the data here -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+>>>>>>> a839bda215c57bb2a0ebd44a24fc2fa864feb3d9
 
                   <hr>
 
+<<<<<<< HEAD
                   <footer>
                     <p>Make Route is a travel assistant aimed to give you the best roadtrips, made by the best HackDFW attendees ever.<br>
                       Want to see our code? Check out our Github <a href="http://github.com/rainiera/makeroute/">here</a>.</p>
                       <p>&copy; Rainier Abaobao, Nick Ginther, Addy Kim, Kieran Vanderslice 2015</p>
                     </footer>
                   </div> <!-- /container -->
+=======
+      <footer>
+          <p>MakeRoute is a travel assistant aimed to give you the best roadtrips, made by the best HackDFW attendees ever.<br>
+              Want to see our code? Check out our Github <a href="http://github.com/rainiera/makeroute/">here</a>.</p>
+        <p>&copy; Rainier Ababao, Nick Ginther, Addy Kim, Kieran Vanderslice 2015</p>
+      </footer>
+    </div> <!-- /container -->
+>>>>>>> a839bda215c57bb2a0ebd44a24fc2fa864feb3d9
 
 
     <!-- Bootstrap core JavaScript
