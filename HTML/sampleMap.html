@@ -20,52 +20,87 @@
 // prompted by your browser. If you see a blank space instead of the map, this
 // is probably because you have denied permission for location sharing.
 
+//var map;
+//
+//function initialize() {
+//  var mapOptions = {
+//    zoom: 6
+//  };
+//  map = new google.maps.Map(document.getElementById('map-canvas'),
+//      mapOptions);
+//
+//  // Try HTML5 geolocation
+//  if(navigator.geolocation) {
+//    navigator.geolocation.getCurrentPosition(function(position) {
+//      var pos = new google.maps.LatLng(position.coords.latitude,
+//                                       position.coords.longitude);
+//
+//      var infowindow = new google.maps.InfoWindow({
+//        map: map,
+//        position: pos,
+//        content: 'Location found using HTML5.'
+//      });
+//
+//      map.setCenter(pos);
+//    }, function() {
+//      handleNoGeolocation(true);
+//    });
+//  } else {
+//    // Browser doesn't support Geolocation
+//    handleNoGeolocation(false);
+//  }
+//}
+//
+//function handleNoGeolocation(errorFlag) {
+//  if (errorFlag) {
+//    var content = 'Error: The Geolocation service failed. Make sure your browser allows us to find your location';
+//  } else {
+//    var content = 'Error: Your browser doesn\'t support geolocation.';
+//  }
+//
+//  var options = {
+//    map: map,
+//    position: new google.maps.LatLng(60, 105),
+//    content: content
+//  };
+//
+//  var infowindow = new google.maps.InfoWindow(options);
+//  map.setCenter(options.position);
+//}
+                  
+            
+        
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
 var map;
+var haight = new google.maps.LatLng(37.7699298, -122.4469157);
+var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
 
 function initialize() {
+  directionsDisplay = new google.maps.DirectionsRenderer();
   var mapOptions = {
-    zoom: 6
-  };
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-
-  // Try HTML5 geolocation
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude,
-                                       position.coords.longitude);
-
-      var infowindow = new google.maps.InfoWindow({
-        map: map,
-        position: pos,
-        content: 'Location found using HTML5.'
-      });
-
-      map.setCenter(pos);
-    }, function() {
-      handleNoGeolocation(true);
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleNoGeolocation(false);
+    zoom: 14,
+    center: haight
   }
+  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  directionsDisplay.setMap(map);
 }
 
-function handleNoGeolocation(errorFlag) {
-  if (errorFlag) {
-    var content = 'Error: The Geolocation service failed.';
-  } else {
-    var content = 'Error: Your browser doesn\'t support geolocation.';
-  }
-
-  var options = {
-    map: map,
-    position: new google.maps.LatLng(60, 105),
-    content: content
+function calcRoute() {
+  var selectedMode = document.getElementById("mode").value;
+  var request = {
+      origin: haight,
+      destination: oceanBeach,
+      // Note that Javascript allows us to access the constant
+      // using square brackets and a string value as its
+      // "property."
+      travelMode: google.maps.TravelMode.DRIVING
   };
-
-  var infowindow = new google.maps.InfoWindow(options);
-  map.setCenter(options.position);
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
+  });
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -74,5 +109,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
   </head>
   <body>
     <div id="map-canvas"></div>
+      <div>
+          
+<strong>Mode of Travel: </strong>
+<select id="mode" onchange="calcRoute();">
+  <option value="DRIVING">Driving</option>
+  <option value="WALKING">Walking</option>
+  <option value="BICYCLING">Bicycling</option>
+  <option value="TRANSIT">Transit</option>
+</select>
+</div>
   </body>
 </html>
