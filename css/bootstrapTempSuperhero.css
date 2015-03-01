@@ -4366,9 +4366,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 @media (min-width: 768px) {
-  .navbar-left {
+  <!--.navbar-left {
     float: left !important;
-  }
+  } DELETE THIS? -->
   .navbar-right {
     float: right !important;
     margin-right: -15px;
