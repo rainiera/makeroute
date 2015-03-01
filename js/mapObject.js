@@ -14,6 +14,7 @@ function initialize() {
   directionsDisplay.setMap(map);
 }
 
+
 function calcRoute() {
   var selectedMode = document.getElementById("mode").value;
   var request = {
