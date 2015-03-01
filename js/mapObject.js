@@ -3,8 +3,8 @@ var directionsService = new google.maps.DirectionsService();
 var map;
 var start = new google.maps.LatLng(30.2669444, -97.7427778);
 var end = new google.maps.LatLng(32.7833333, -96.8);
-var changeLat = (end.lat() - start.lat())/10;
-var changeLong = (end.lng() - start.lng())/10;
+var changeLat = (end.lat() - start.lat())/2;
+var changeLong = (end.lng() - start.lng())/2;
 var markers = [];
 
 function initialize() {
@@ -18,19 +18,17 @@ function initialize() {
   var service;
   var request = {
     location: start,
-    radius: '8000',
+    radius: '70000',
     types: ['food']
   };
 
-  for(var i = 0; i < 10; i++){
+ for(var i = 0; i < 2; i++){
     var change = new google.maps.LatLng(start.lat() + (changeLat * i), start.lng() + (changeLong * i));
     request.location = change;
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, callback);
   }
-  for (var j = 0; j < markers.length; j++){
-    createMarker(markers[j]);
-  }
+
 }
 
 function calcRoute() {
@@ -64,15 +62,19 @@ function createMarker(place) {
 
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name);
-    infowindow.open(map, this);
+    //second param marker so that change state of map to have marker
+    infowindow.open(map, marker);
   });
 }
 
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      markers.push(results[i]);
+    for (var i = 0; i < results.length && i < 75; i++) {
+      if(i%4 == 0){
+        markers.push(results[i]);
+        createMarker(results[i]);
+      }
     }
   }
 }
