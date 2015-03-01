@@ -24,6 +24,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+    <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -33,7 +34,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    <a class="navbar-brand" href="#">Make Route</a>
+    <a class="navbar-brand" href="#">MakeRoute</a>
     </div>
 
     <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
@@ -41,23 +42,44 @@
             <li class="dropdown"></li>
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group">
-                    <input type="text" name="LocationA" class="form-control" placeholder="Location A">
+                    <input type="text" name="LocationA" class="form-control" placeholder="Location A" id="locationa">
                     <!--Put some sort of divider here?-->
-                    <input type="text" name="LocationB" class="form-control" placeholder="Location B">
+                    <input type="text" name="LocationB" class="form-control" placeholder="Location B" id="locationb">
                 </div>
            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mode of Travel<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Driving</a></li>
+          <ul class="dropdown-menu" role="menu" id="dropDownChoice">
+            <li><a href="#" >Driving</a></li>
             <li><a href="#">Walking</a></li>
             <li><a href="#">Biking</a></li>
             <li><a href="#">Transit</a></li>
           </ul>
+                <script>
+                    function chooseTravel() {
+                        var travel = document.getElementById(dropDownChoice);
+                        //Get value of the input field with id=
+                        if (travel == 1) {
+                            //Driving
+                            window.alert("Driving");
+                        } else if (travel == 2) {
+                            //Walking
+                            window.alert("Walking");
+                        } else if (travel == 3) {
+                            //Transit
+                            window.alert("Transit");
+                        } else {
+                            //Should not happen, not chosen
+                            //Do nothing
+                            //document.getElementById(travel).innerHTML = T
+                        }
+                </script>
                 <button type="submit" class="btn btn-default">Search</button>
+                <!-- on click="document.getElementById("demo").innerHTML = "Change text"> a tag the id="attribute"> -->
             </form>
         </ul>
     </div>
   </div>
 </nav>
+        <marquee>lol</marquee>
     <!-- <div class="jumbotron"> -->
       <!--<div class="container"> -->
         <iframe src="/html/sampleMap.html" style="height: 90%; width: 100%" scrolling="no"></iframe>
@@ -90,7 +112,7 @@
 
       <footer>
           <p>Make Route is a travel assistant aimed to give you the best roadtrips, made by the best HackDFW attendees ever.<br>
-              Want to see our code? Check out our Github <a href="github.com/rainiera/makeroute/">here</a>.</p>
+              Want to see our code? Check out our Github <a href="http://github.com/rainiera/makeroute/">here</a>.</p>
         <p>&copy; Rainier Abaobao, Nick Gunther, Addy Kim, Kieran Vanderslice 2015</p>
       </footer>
     </div> <!-- /container -->
