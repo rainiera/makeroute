@@ -14,7 +14,10 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
 
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return 'Hello';
+  return
+  	<div>
+  		Hi world!
+  	</div>
 });
 
 $app->run();
