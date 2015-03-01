@@ -15,7 +15,8 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 
-    <script>
+    <script src="../js/mapObject.js"></script>
+      <script>
 // Note: This example requires that you consent to location sharing when
 // prompted by your browser. If you see a blank space instead of the map, this
 // is probably because you have denied permission for location sharing.
@@ -68,44 +69,8 @@
 //  map.setCenter(options.position);
 //}
                   
-            
-        
-var directionsDisplay;
-var directionsService = new google.maps.DirectionsService();
-var map;
-var haight = new google.maps.LatLng(37.7699298, -122.4469157);
-var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
-
-function initialize() {
-  directionsDisplay = new google.maps.DirectionsRenderer();
-  var mapOptions = {
-    zoom: 14,
-    center: haight
-  }
-  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-  directionsDisplay.setMap(map);
-}
-
-function calcRoute() {
-  var selectedMode = document.getElementById("mode").value;
-  var request = {
-      origin: haight,
-      destination: oceanBeach,
-      // Note that Javascript allows us to access the constant
-      // using square brackets and a string value as its
-      // "property."
-      travelMode: google.maps.TravelMode.DRIVING
-  };
-  directionsService.route(request, function(response, status) {
-    if (status == google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setDirections(response);
-    }
-  });
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
+//google.maps.event.addDomListener(window, 'load', initialize);
+</script>
   </head>
   <body>
     <div id="map-canvas"></div>
