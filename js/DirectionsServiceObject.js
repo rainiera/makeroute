@@ -10,10 +10,6 @@ object literal containing the input terms and a
 callback method to execute upon receipt of the response.
 */
 
-var 
-
-
-
 /*
 Pre: pointA and pointB are strings representing valid locations
 wp represents a waypoint with "stopover" being true by default
