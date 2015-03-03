@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Geolocation Marker Example Usage</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
 
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
-    <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/geolocationmarker/src/geolocationmarker-compiled.js"></script>
-  </head>
-  <body>
-    <div id="map_canvas"></div>
-    
-    <!--                 _..--+~/@-~--.                                   
+<!--                 _..--+~/@-~--.                                   
                     _-=~      (  .    "}                                 
                  _-~     _.--=.\ \""""                                                  
                _~      _-       \ \_\                                             
@@ -31,43 +21,39 @@
     **********************
 
 -->
-    
-  <head>
+
+<head>
     <title>Geolocation</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
-     <!-- html, body, #map-canvas {
-        height: 95%;
-        margin-top: 2%;
-          margin-left: 8%;
-          margin-right: 8%;
-        padding: 0px;
-      } -->
+        html,
+        body,
+        #map-canvas {
+            height: 80%;
+            margin-top: 2%;
+            margin-left: 8%;
+            margin-right: 8%;
+            padding: 0px;
+        }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
-
-
-
     <script src="../js/mapObject.js"></script>
-    
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="map-canvas"></div>
-      <div>
-          
-<strong>Mode of Travel: </strong>
-<select id="mode" onchange="calcRoute();">
-  <option value="">Select a mode</option>
-  <option value="DRIVING">Driving</option>
-  <option value="WALKING">Walking</option>
-  <option value="BICYCLING">Bicycling</option>
-  <option value="TRANSIT">Transit</option>
-</select>
-</div>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-  </body>
+    <div>
+        <strong>Mode of Travel: </strong>
+        <select id="mode" onchange="calcRoute();">
+            <option value="">Select a mode</option>
+            <option value="DRIVING">Driving</option>
+            <option value="WALKING">Walking</option>
+            <option value="BICYCLING">Bicycling</option>
+            <option value="TRANSIT">Transit</option>
+        </select>
+    </div>
+</body>
+
 </html>
