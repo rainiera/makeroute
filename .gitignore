@@ -2,7 +2,8 @@ vendor/
 .env
 .DS_Store
 
-.pyc
-.sql
-.rdb
+*.pyc
+*.sql
+*.rdb
 /venv
+
